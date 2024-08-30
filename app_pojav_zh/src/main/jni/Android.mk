@@ -97,7 +97,3 @@ LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)
 LOCAL_SHARED_LIBRARIES := awt_headless
 LOCAL_SRC_FILES := xawt_fake.c
 include $(BUILD_SHARED_LIBRARY)
-
-# delete fake libs after linked
-$(info $(shell (rm $(HERE_PATH)/../jniLibs/*/libawt_headless.so)))
-
