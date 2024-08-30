@@ -28,6 +28,7 @@ LOCAL_LDLIBS := -ldl -llog -landroid
 # -lGLESv2
 LOCAL_MODULE := pojavexec
 LOCAL_CFLAGS += -g -rdynamic
+LOCAL_CFLAGS += -Wno-int-conversion
 # LOCAL_CFLAGS += -DDEBUG
 # -DGLES_TEST
 LOCAL_SRC_FILES := \
