@@ -36,14 +36,6 @@ jobs:
           branch: main
           name: lwjgl
 
-      - name: Cache platform-tools
-        uses: actions/cache@v4.0.2
-        with:
-          path: ~/android/sdk/platform-tools
-          key: ${{ runner.os }}-platform-tools
-          estore-keys: |
-                  ${{ runner.os }}-platform-tools-
-
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@main
         
