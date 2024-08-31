@@ -37,6 +37,7 @@ jint (*orig_ProcessImpl_forkAndExec)(JNIEnv *env, jobject process, jint mode, jb
 static void registerFunctions(JNIEnv *env);
 
 jint JNI_OnLoad(JavaVM* vm, __attribute__((unused)) void* reserved) {
+    JNIEnv *env;
     if (pojav_environ->dalvikJavaVMPtr == NULL) {
         __android_log_print(ANDROID_LOG_INFO, "Native", "Saving DVM environ...");
         //Save dalvik global JavaVM pointer
@@ -59,7 +60,7 @@ jint JNI_OnLoad(JavaVM* vm, __attribute__((unused)) void* reserved) {
         jfieldID field_mouseDownBuffer = (*pojav_environ->runtimeJNIEnvPtr_JRE)->GetStaticFieldID(pojav_environ->runtimeJNIEnvPtr_JRE, pojav_environ->vmGlfwClass, "mouseDownBuffer", "Ljava/nio/ByteBuffer;");
         jobject mouseDownBufferJ = (*pojav_environ->runtimeJNIEnvPtr_JRE)->GetStaticObjectField(pojav_environ->runtimeJNIEnvPtr_JRE, pojav_environ->vmGlfwClass, field_mouseDownBuffer);
         pojav_environ->mouseDownBuffer = (*pojav_environ->runtimeJNIEnvPtr_JRE)->GetDirectBufferAddress(pojav_environ->runtimeJNIEnvPtr_JRE, mouseDownBufferJ);
-        hookExec(JNIEnv *env);
+        hookExec(env);
         installLinkerBugMitigation();
         installEMUIIteratorMititgation();
     }
