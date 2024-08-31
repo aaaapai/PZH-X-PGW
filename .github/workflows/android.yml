@@ -51,7 +51,7 @@ jobs:
           ./gradlew app_pojav_zh:assembleDebug -Darch=${{matrix.arch}}
 
       - name: Upload Debug ${{matrix.arch}}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@vmain
         with:
           name: PZH-X-PGW(Debug)-${{matrix.arch}}
           path: app_pojav_zh/build/outputs/apk/debug/*
