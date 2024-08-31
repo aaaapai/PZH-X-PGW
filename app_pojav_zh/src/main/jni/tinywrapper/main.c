@@ -1,4 +1,6 @@
 //#import <Foundation/Foundation.h>
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 #include <dlfcn.h>
 
