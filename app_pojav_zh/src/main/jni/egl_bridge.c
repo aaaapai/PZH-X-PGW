@@ -364,8 +364,8 @@ Java_org_lwjgl_opengl_GL_getNativeWidthHeight(JNIEnv *env, jobject thiz) {
         jintArray ret = (*env)->NewIntArray(env,2);
         jint arr[] = {pojav_environ->savedWidth, pojav_environ->savedHeight};
         (*env)->SetIntArrayRegion(env,ret,0,2,arr);
+        return ret;
     }
-    return ret;
 }
 #endif
 
