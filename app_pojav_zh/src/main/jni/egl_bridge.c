@@ -351,9 +351,9 @@ Java_org_lwjgl_opengl_GL_nativeRegalMakeCurrent(JNIEnv *env, jclass clazz) {
 EXTERNAL_API JNIEXPORT jlong JNICALL
 Java_org_lwjgl_opengl_GL_getGraphicsBufferAddr(JNIEnv *env, jobject thiz) {
     if (SpareBuffer() && pojav_environ->config_renderer == RENDERER_VIRGL)
-        return &gbuffer;
+        return (jlong)&gbuffer;
     else if (SpareBuffer() && pojav_environ->config_renderer == RENDERER_VK_ZINK_PREF)
-        return &mbuffer;
+        return (jlong)&mbuffer;
 }
 
 EXTERNAL_API JNIEXPORT jintArray JNICALL
@@ -364,8 +364,8 @@ Java_org_lwjgl_opengl_GL_getNativeWidthHeight(JNIEnv *env, jobject thiz) {
         jintArray ret = (*env)->NewIntArray(env,2);
         jint arr[] = {pojav_environ->savedWidth, pojav_environ->savedHeight};
         (*env)->SetIntArrayRegion(env,ret,0,2,arr);
-        return ret;
     }
+    return ret;
 }
 #endif
 
