@@ -237,6 +237,7 @@ dependencies {
     implementation 'org.commonmark:commonmark:0.22.0'
     implementation 'com.google.android.material:material:1.13.0-alpha05'
     implementation 'androidx.core:core-ktx:1.15.0-alpha02'
+    implementation 'joda-time:joda-time:2.12.7'
     implementation 'com.daimajia.androidanimations:library:2.4@aar'
     implementation('org.apache.commons:commons-text:1.12.0') {
         exclude group: 'org.apache.commons', module: 'commons-lang3'
