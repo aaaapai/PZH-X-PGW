@@ -76,7 +76,7 @@ android {
 
     defaultConfig {
         applicationId "net.kdt.pojavlaunch.zh.firefly"
-        minSdkVersion 26
+        minSdkVersion 24
         targetSdkVersion 35
         versionCode getVersionCode()
         versionName "1.2.9.0"
