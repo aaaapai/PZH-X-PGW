@@ -11,7 +11,7 @@ static def getEnvOrDefault(String envVar, String defaultValue) {
 def getVersionCode = {
     def isMainBranch = System.getenv('IS_MAIN_BRANCH') == 'true'
 
-    def baseDateSeconds = 9939458
+    def baseDateSeconds = 9939558
     if (isMainBranch) {
         baseDateSeconds += Integer.parseInt(System.getenv("GITHUB_RUN_NUMBER"))
     }
@@ -79,7 +79,7 @@ android {
         minSdkVersion 24
         targetSdkVersion 35
         versionCode getVersionCode()
-        versionName "1.2.9.0"
+        versionName "1.2.9.2"
         multiDexEnabled true //important
         resValue 'string', 'curseforge_api_key', getCFApiKey()
         resValue 'string', 'zh_branch_info', getBranchName()
