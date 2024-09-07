@@ -90,8 +90,8 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix '.debug'
-            minifyEnabled false
-            shrinkResources false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             resValue 'string', 'application_package', 'net.kdt.pojavlaunch.zh.firefly.debug'
             resValue 'string', 'storageProviderAuthorities', 'net.kdt.pojavlaunch.scoped.gamefolder.zh.firefly.debug'
