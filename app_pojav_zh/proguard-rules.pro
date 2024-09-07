@@ -24,4 +24,5 @@
 # Option screens
  -keep class net.kdt.pojavlaunch.prefs.screens** {*;}
 
-
+ -optimizationpasses 7
+ -dontpreverify
