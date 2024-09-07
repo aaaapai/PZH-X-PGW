@@ -14,3 +14,6 @@ int SpareBuffer();
 #define FRAME_BUFFER_SUPPOST
 
 #endif
+
+extern void *gbuffer;
+extern void *mbuffer;
