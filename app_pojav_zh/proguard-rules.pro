@@ -26,3 +26,5 @@
 
  -optimizationpasses 7
  -dontpreverify
+ -dontwarn com.daimajia.easing.Glider
+ -dontwarn com.daimajia.easing.Skill
