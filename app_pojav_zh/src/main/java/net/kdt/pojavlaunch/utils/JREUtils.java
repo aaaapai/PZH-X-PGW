@@ -203,6 +203,7 @@ public class JREUtils {
 
         // The OPEN GL version is changed according
         envMap.put("LIBGL_ES", (String) ExtraCore.getValue(ExtraConstants.OPEN_GL_VERSION));
+        envMap.put("LIBGL_FB", "3");
 
         envMap.put("FORCE_VSYNC", String.valueOf(LauncherPreferences.PREF_FORCE_VSYNC));
 
@@ -712,7 +713,7 @@ public class JREUtils {
     static {
         System.loadLibrary("pojavexec");
         System.loadLibrary("pojavexec_awt");
-        dlopen("libxhook.so");
+        dlopen("libbytehook.so");
         System.loadLibrary("istdio");
     }
 }
