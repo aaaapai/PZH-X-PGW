@@ -9,14 +9,26 @@ HERE_PATH := $(LOCAL_PATH)
 LOCAL_PATH := $(HERE_PATH)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := EGL_angle
+LOCAL_SRC_FILES := tinywrapper/angle-gles/$(TARGET_ARCH_ABI)/libEGL_angle.so
+LOCAL_CFLAGS += -O3 -fPIC -flto=auto -fwhole-program-vtables -mllvm -polly
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := angle_gles2
 LOCAL_SRC_FILES := tinywrapper/angle-gles/$(TARGET_ARCH_ABI)/libGLESv2_angle.so
 LOCAL_CFLAGS += -O3 -fPIC -flto=auto -fwhole-program-vtables -mllvm -polly
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := feature_support_angle
+LOCAL_SRC_FILES := tinywrapper/angle-gles/$(TARGET_ARCH_ABI)/libfeature_support_angle.so
+LOCAL_CFLAGS += -O3 -fPIC -flto=auto -fwhole-program-vtables -mllvm -polly
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := tinywrapper
-LOCAL_SHARED_LIBRARIES := angle_gles2
+LOCAL_SHARED_LIBRARIES := EGL_angle angle_gles2 feature_support_angle
 LOCAL_CFLAGS += -O3 -fPIC -flto=auto -fwhole-program-vtables -mllvm -polly
 LOCAL_SRC_FILES := tinywrapper/main.c tinywrapper/string_utils.c
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/tinywrapper
