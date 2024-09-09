@@ -13,4 +13,7 @@ void virglMakeCurrent(void* window);
 void* virglCreateContext(void* contextSrc);
 void virglSwapInterval(int interval);
 
+extern void *gbuffer;
+extern void *mbuffer;
+
 #endif //VIRGL_BRIDGE_H
