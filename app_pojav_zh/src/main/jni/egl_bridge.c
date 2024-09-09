@@ -52,6 +52,11 @@
 EGLConfig config;
 struct PotatoBridge potatoBridge;
 
+#ifdef FRAME_BUFFER_SUPPOST
+void *gbuffer;
+void *mbuffer;
+#endif
+
 void bigcore_set_affinity();
 
 EXTERNAL_API void pojavTerminate() {
