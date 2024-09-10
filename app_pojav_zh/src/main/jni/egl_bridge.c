@@ -49,8 +49,6 @@
 // This means that you are forced to have this function/variable for ABI compatibility
 #define ABI_COMPAT __attribute__((unused))
 
-void *mbuffer;
-
 EGLConfig config;
 struct PotatoBridge potatoBridge;
 
