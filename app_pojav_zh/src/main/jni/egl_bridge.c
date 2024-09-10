@@ -241,8 +241,7 @@ int pojavInitOpenGL() {
     if (pojav_environ->config_renderer == RENDERER_VK_ZINK_PREF)
         if (spare_init()) spare_setup_window();
 
-    return !br_init();
-    //return 0;
+    return 0;
 }
 
 EXTERNAL_API int pojavInit() {
@@ -251,7 +250,7 @@ EXTERNAL_API int pojavInit() {
     pojav_environ->savedHeight = ANativeWindow_getHeight(pojav_environ->pojavWindow);
     ANativeWindow_setBuffersGeometry(pojav_environ->pojavWindow,pojav_environ->savedWidth,pojav_environ->savedHeight,AHARDWAREBUFFER_FORMAT_R8G8B8X8_UNORM);
     pojavInitOpenGL();
-    return JNI_TRUE;
+    return 1;
 }
 
 EXTERNAL_API void pojavSetWindowHint(int hint, int value) {
