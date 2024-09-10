@@ -17,6 +17,8 @@
 #include "renderer_config.h"
 #include "spare_renderer_config.h"
 
+void *gbuffer;
+
 int (*vtest_main_p)(int argc, char *argv[]);
 void (*vtest_swap_buffers_p)(void);
 
