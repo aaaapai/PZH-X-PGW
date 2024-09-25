@@ -76,7 +76,7 @@ android {
 
     defaultConfig {
         applicationId "net.kdt.pojavlaunch.zh.firefly"
-        minSdkVersion 26
+        minSdkVersion 24
         targetSdkVersion 35
         versionCode getVersionCode()
         versionName "1.2.9.2"
@@ -162,7 +162,7 @@ android {
         }
     }
 
-    ndkVersion = "27.0.12077973"
+    ndkVersion = "26.3.11579264"
 
     externalNativeBuild {
         ndkBuild {
@@ -238,6 +238,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.13.0-alpha05'
     implementation 'androidx.core:core-ktx:1.15.0-alpha02'
     implementation 'com.google.android.flexbox:flexbox:3.0.0'
+    implementation 'joda-time:joda-time:2.12.7'
     implementation 'com.daimajia.androidanimations:library:2.4@aar'
 
     implementation('org.apache.commons:commons-text:1.12.0') {
