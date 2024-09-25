@@ -203,6 +203,9 @@ public class JREUtils {
 
         // The OPEN GL version is changed according
         envMap.put("LIBGL_ES", (String) ExtraCore.getValue(ExtraConstants.OPEN_GL_VERSION));
+        envMap.put("LIBGL_FB", "3");
+        envMap.put("LIBGL_GLES", "libGLESv2.so");
+        envMap.put("LIBGL_EGL", "libEGL.so");
 
         envMap.put("FORCE_VSYNC", String.valueOf(LauncherPreferences.PREF_FORCE_VSYNC));
 

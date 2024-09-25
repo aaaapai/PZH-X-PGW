@@ -1,7 +1,7 @@
 //
 // Created by maks on 17.09.2022.
 //
-#include <EGL//egl.h>
+#include <EGL/egl.h>
 #include <stdbool.h>
 #ifndef POJAVLAUNCHER_GL_BRIDGE_H
 #define POJAVLAUNCHER_GL_BRIDGE_H
