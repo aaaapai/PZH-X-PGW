@@ -2,6 +2,10 @@
 // Created by Vera-Firefly on 2.12.2023.
 // Definitions specific to the renderer
 //
+#define RENDERER_VK_ZINK 2
+#define RENDERER_VULKAN 4
+#define RENDERER_VK_WARLIP 5
+#define RENDERER_VK_ZINK_PREF 6
 
 #ifndef POTATOBRIDGE_H
 #define POTATOBRIDGE_H
