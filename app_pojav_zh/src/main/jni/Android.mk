@@ -26,7 +26,7 @@ include $(PREBUILT_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 LOCAL_MODULE := tinywrapper
 LOCAL_SHARED_LIBRARIES := EGL_angle angle_gles2 feature_support_angle
-LOCAL_CFLAGS += -O3 -fPIC -flto=thin -fwhole-program-vtables -mllvm -polly
+LOCAL_CFLAGS += -O3 -fPIC -DPIC -flto=thin -fwhole-program-vtables -mllvm -polly
 LOCAL_LDLAGS += -flto=thin -fuse-ld=lld
 LOCAL_SRC_FILES := tinywrapper/main.c tinywrapper/string_utils.c
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/tinywrapper
@@ -39,12 +39,13 @@ LOCAL_LDLIBS := -ldl -llog -landroid
 # -lGLESv2
 LOCAL_MODULE := pojavexec
 LOCAL_LDLAGS += -flto=thin -fuse-ld=lld
-LOCAL_CFLAGS += -O3 -fPIC -flto=thin -fwhole-program-vtables -mllvm -polly
+LOCAL_CFLAGS += -O3 -fPIC -DPIC -flto=thin -fwhole-program-vtables -mllvm -polly
 LOCAL_CFLAGS += -Wno-int-conversion
 # LOCAL_CFLAGS += -DDEBUG
 # -DGLES_TEST
 LOCAL_SRC_FILES := \
     bigcoreaffinity.c \
+    ctxbridges/renderer_config.c \
     egl_bridge.c \
     ctxbridges/gl_bridge.c \
     ctxbridges/osm_bridge.c \
