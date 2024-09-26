@@ -49,9 +49,6 @@
 // This means that you are forced to have this function/variable for ABI compatibility
 #define ABI_COMPAT __attribute__((unused))
 
-EGLConfig config;
-struct PotatoBridge potatoBridge;
-
 void bigcore_set_affinity();
 
 EXTERNAL_API void pojavTerminate() {
